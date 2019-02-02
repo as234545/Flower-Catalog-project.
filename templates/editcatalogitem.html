@@ -1,0 +1,34 @@
+<html>
+<body>
+    {% block content %}
+{% include "header.html" %}
+
+<h1>Edit catalog Item</h1>
+<form action="#" method = "post">
+<label for="name">Name:</label>
+                    <input type ="text" maxlength="100" class="form-control" name="name" value="{{item.name }}">
+<label for="description">Description:</label>
+                    <textarea class="form-control" maxlength="250" rows="3" name="description">{{item.description}}</textarea>
+
+                    <label for="price">Price:</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input type ="text" maxlength="10" class="form-control" name="price" value="{{item.price}}">
+
+<button type="submit" class="btn btn-default" id="submit" type="submit">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+                    <a href = '{{url_for('showCatalogs')}}'>
+                        <button class="btn btn-default delete" type="button">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+                    </a>
+
+
+
+
+
+
+
+{% endblock %}
+
+</body>
+</html>

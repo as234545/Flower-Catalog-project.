@@ -1,0 +1,31 @@
+
+<html>
+
+<body>
+{% block content %}
+{% include "header.html" %}
+<h1>{{catalog.name}}</h1>
+
+
+{% for i in items %}
+
+<div>
+
+<p>{{i.name}}</p>
+
+<p>{{i.description}}</p>
+
+<p> {{i.price}} </p>
+
+<p> {{i.family}} </p>
+
+
+
+</div>
+
+
+{% endfor %}
+{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+
+
+
+<html>
+
+<body>
+
+
+{% block content %}
+{% include "header.html" %}
+
+<div>
+            <h1>Catalogs</h1>
+    <a href="{{url_for('newCatalog')}}">
+                <button class="btn btn-default" id="new-catalog">
+                    <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>Add Catalog
+                </button>
+            </a>
+
+{% for catalog in catalogs %}
+        <a href = "{{url_for('catalogItem', catalog_id = catalog.id)}}">
+            <div class="row">
+                <div class="col-md-1"></div>
+                    <div class="col-md-10 catalog-list">
+                        <h3>{{catalog.name}}</h3>
+                    </div>
+                <div class="col-md-1"></div>
+            </div>
+        </a>
+
+
+<a href = "{{url_for('showCatalogs', catalog_id = catalog.id)}}">
+
+        </a>
+<a href='{{url_for('editCatalog', catalog_id = catalog.id) }}'>Edit</a>
+</div>
+
+<a href = '{{url_for('deleteCatalog', catalog_id = catalog.id ) }}'>Delete</a>
+    {% endfor %}
+
+{% endblock %}
+</body>
+
+</html>
